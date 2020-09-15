@@ -1,0 +1,162 @@
+body{
+  margin:0;
+  padding:0;
+  text-align:center;
+ background-color: #8f1b17;
+background-image: url("https://www.transparenttextures.com/patterns/black-felt.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.header{
+  font-size:400%;
+  font-weight:700;
+  margin:2rem auto 1rem;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.form-group{
+  width:10%;
+}
+
+.dropdown{
+  width:100%;
+  display:inline-block;
+}
+
+/* Dropdown Button */
+.dropbtn {
+background-color: #373c41;
+color: white;
+border: none;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #343A40;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color:white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align:left;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.appear{display: block !important;}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #dadde2;}
+
+
+.btn { 
+  display:inline-block;
+  margin-top:-1%;
+}
+
+
+
+.form-control{
+  width:50%;
+  display:inline-block
+}
+
+.container{
+  margin:auto;
+}
+
+.cardscontainer{
+  transform: translate(-50%, -50%);
+  width:100%;
+  height:10%;
+  display: inline-flex;
+  flex-flow:row wrap;
+  justify-content: space-around;
+  margin:60% 0 0 50%;
+}
+
+.card{
+  flex: 1;
+  flex-basis: 300px;
+  flex-grow: 0;
+  height: 270px;
+  background: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0px 4px 7px rgba(0,0,0,.5);
+  cursor: pointer;
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  overflow: hidden;
+ display:inline-block;
+ margin:1% 0 0 1%; 
+
+
+  
+}
+.card img{
+  width: 100%;
+  height:100%;
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+}
+.descriptions{
+  position: absolute;
+  top:0px;
+  left:0px;
+  background-color: rgba(255,255,255,.7);
+  width:100%;
+  height:100%;
+  transition: all .7s ease-in-out;
+  box-sizing: border-box;
+  clip-path: circle(0% at 100% 100%);
+}
+.card:hover .descriptions{
+  left:0px;
+  transition: all .7s ease-in-out;
+  clip-path: circle(75%);
+}
+.card:hover{
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+  transform: scale(.97);
+}
+.card:hover img{
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  transform: scale(1.6) rotate(20deg);
+  filter: blur(3px);
+}
+.card h2{
+  color: #ff3838;
+  font-size:90%;
+  margin: 4px 0 2px;
+}
+.card p{
+ font-size:80%;
+ line-height:14px;
+}
+.card button{
+  width: fit-content;
+  height: 40px;
+  cursor: pointer;
+  border-style: none;
+  background-color: #ff3838;
+  color:#fff;
+  font-size: 15px;
+  outline: none;
+  box-shadow: 0px 2px 3px rgba(0,0,0,.4);
+  transition: all .5s ease-in-out;
+}
+.card button:hover{
+  transform: scale(.95) translateX(-5px);
+  transition: all .5s ease-in-out;
+}
