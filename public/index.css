@@ -2,74 +2,39 @@ body{
   margin:0;
   padding:0;
   text-align:center;
- background-color: #8f1b17;
-background-image: url("https://www.transparenttextures.com/patterns/black-felt.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-color: #035aa6;
+  background-image: url("patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Galindo', cursive;
+
 }
 
 .header{
-  font-size:400%;
+  font-size:500%;
   font-weight:700;
-  margin:2rem auto 1rem;
+  margin:8rem auto 1rem;
   font-family: 'Permanent Marker', cursive;
+  color:black;
 }
 
 .form-group{
   width:10%;
 }
 
-.dropdown{
-  width:100%;
+
+.btn1 { 
   display:inline-block;
-}
-
-/* Dropdown Button */
-.dropbtn {
-background-color: #373c41;
-color: white;
-border: none;
-}
-
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #343A40;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color:white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align:left;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.appear{display: block !important;}
-
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #dadde2;}
-
-
-.btn { 
-  display:inline-block;
-  margin-top:-1%;
+  background-color: #ee4540;
 }
 
 
 
 .form-control{
-  width:50%;
+  width:40%;
   display:inline-block
 }
 
@@ -79,19 +44,25 @@ border: none;
 
 .cardscontainer{
   transform: translate(-50%, -50%);
-  width:100%;
+  width:93%;
   height:10%;
   display: inline-flex;
   flex-flow:row wrap;
   justify-content: space-around;
-  margin:60% 0 0 50%;
+  margin:80% 0 -80% 50%;
+  border:1px solid black;
+  background-color:#393e46;
+  border-radius:0.3%;
+  box-shadow: 10px 0px 10px 10px rgba(0, 0, 0, 0.5);
+
 }
 
 .card{
   flex: 1;
   flex-basis: 300px;
   flex-grow: 0;
-  height: 270px;
+  height: 250px;
+  width:160px;
   background: #fff;
   border: 2px solid #fff;
   box-shadow: 0px 4px 7px rgba(0,0,0,.5);
@@ -136,7 +107,7 @@ border: none;
   filter: blur(3px);
 }
 .card h2{
-  color: #ff3838;
+  color: #ee4540;
   font-size:90%;
   margin: 4px 0 2px;
 }
@@ -149,7 +120,7 @@ border: none;
   height: 40px;
   cursor: pointer;
   border-style: none;
-  background-color: #ff3838;
+  background-color: #ee4540;
   color:#fff;
   font-size: 15px;
   outline: none;
@@ -159,4 +130,75 @@ border: none;
 .card button:hover{
   transform: scale(.95) translateX(-5px);
   transition: all .5s ease-in-out;
+}
+
+/*design sezione un solo libro*/
+
+.volumeContainer{
+  display:flex;
+  flex-flow:row;
+  justify-content: space-around;
+  width:70%;
+  min-height: 40%;
+  margin:8% auto;
+  background-color: #393e46;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 
+  0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding:1%;
+  color:white;
+}
+
+.leftpresentation{
+  border-right:1px solid black;
+  width:30%;
+}
+
+.imaged{
+  box-shadow:0 4px 8px 0 rgba(0, 0, 
+  0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border:1px solid black;
+}
+ul {
+  list-style-type: none;
+  text-align:left;
+  padding:0;
+}
+.icons{
+  width:10%;
+}
+.volumeTitle{
+  color: #ee4540
+}
+/* FILE HTWO */
+
+.navbar{
+  background-color:#393e46;
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content: left;
+  margin-top:0;
+  height:3.4rem;
+  border-radius: 1%;
+}
+
+.form2{
+  text-align:left;
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content: left;
+}
+
+.header2{
+  font-weight:700;
+  color:white;
+  font-family: 'Permanent Marker', cursive;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+a:hover{
+  text-decoration:none;
+  color:inherit;
 }

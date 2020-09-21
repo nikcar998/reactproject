@@ -1,20 +1,20 @@
-import Axios from 'axios';
 import React, {useState} from 'react';
 import Card from "./Card";
-import Navbar from "./Navabar";
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Hone from "./Hone";
 import Htwo from "./Htwo";
+import Home from "./Home";
+
 function App() {
  
-const [book,setBook]=useState("");
 const [result,setResult]=useState([]);
-
 const [id, setId]=useState("");
 
+
  function Mapped(){
+   
   return(
-    <div >
+    <div>
     {result.map(book => ( 
     book.volumeInfo.imageLinks !== undefined?<Card
           key={book.id}
@@ -29,26 +29,17 @@ const [id, setId]=useState("");
       </div> );
  }
 
-
- function handleChange(event){
-  const book = event.target.value;
-  setBook(book);
+ function ShowMapped(props){
+   return (
+     <div>
+      <Htwo setResult={props.setResult} />
+      <div className="cardscontainer">
+        <Mapped ></Mapped>
+      </div>
+     </div>
+   )
  }
 
-
-
- 
-
- function handleSubmit(event){
- event.preventDefault();
- Axios.get("https://www.googleapis.com/books/v1/volumes?q="+ book +"&maxResults=40")
- .then(data =>{
-   console.log(data.data.items[0])
-   setResult(data.data.items);
- }).catch(error =>{
-   console.log(error);
- })
-}
 
 function idChange() {
   if(id!==""){
@@ -60,24 +51,10 @@ idChange();
   return (
     <Router>
     <div>
-      <Navbar />
-      <form onSubmit={handleSubmit} className="container row justify-content-center ">
-        <div className="form-group  col-md-9">
-          <input 
-              type="text"
-              onChange={handleChange}
-              className="form-control"
-              placeholder="search for books" />
-            <button type="submit" className="btn btn-danger">Search</button>
-        </div>
-      </form>
-      <br></br>
-      <div className="cardscontainer">
-        <Mapped />
-        </div>
         <Switch>
-          <Route exact path="/" component={Hone} />
-          <Route path="/hello" component={Htwo} />
+          <Route exact path="/" component={() => <Home setResult={setResult}  />} />
+          <Route exact path="/home" component={() => <ShowMapped setResult={setResult}  />} />
+          <Route path="/hello" component={() => <Hone id={id} setResult={setResult} />} />
         </Switch>
 
         
