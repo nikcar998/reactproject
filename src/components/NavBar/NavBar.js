@@ -2,6 +2,7 @@ import React, {useState, useContext} from "react";
 import Axios from "axios"
 import {useHistory, Link} from "react-router-dom";
 import ResultContext from "../ResultContext";
+import _ from "lodash"
 import "./navbar.css"
 
 /*Questo componente di fatto ha le medesima funzionalità di "Home", la maggiore differenza è la trasformazione 
@@ -14,8 +15,8 @@ function NavBar(props){
       event.preventDefault();
       Axios.get("https://www.googleapis.com/books/v1/volumes?q="+ book +"&maxResults=40")
       .then(data =>{
-        console.log(data.data.items[0])
-        setResult(data.data.items);
+        console.log(_.get(data,'data.items[0]',"non trovato"));
+        setResult(_.get(data,'data.items',[0]));
         history.push("/home");
       }).catch(error =>{
         console.log(error);
