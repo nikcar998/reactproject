@@ -1,65 +1,41 @@
 import React, {useState} from 'react';
-import Card from "./Card";
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Hone from "./Hone";
-import Htwo from "./Htwo";
-import Home from "./Home";
+import GetVolume from "./cardShow/GetVolume";
+import Home from "./home/Home";
+import ShowMapped from "./showMapped/ShowMapped"
+import {ResultProvider} from "./ResultContext";
 
+/*Do accesso allo state di resultContext  ad ogni functional component che verrà inoltre racchiuso in un 
+Router ed uno Switch che lo mostrerà quando necessario */ 
 function App() {
- 
-const [result,setResult]=useState([]);
 const [id, setId]=useState("");
 
-
- function Mapped(){
-   
-  return(
-    <div>
-    {result.map(book => ( 
-    book.volumeInfo.imageLinks !== undefined?<Card
-          key={book.id}
-          id={book.id}
-          link={book.volumeInfo.imageLinks.thumbnail}
-          title={book.volumeInfo.title}
-          description={book.volumeInfo.description}
-          authors={book.volumeInfo.authors}
-          setId={setId}
-
-      /> : null ))} 
-      </div> );
- }
-
- function ShowMapped(props){
-   return (
-     <div>
-      <Htwo setResult={props.setResult} />
-      <div className="cardscontainer">
-        <Mapped ></Mapped>
-      </div>
-     </div>
-   )
- }
-
-
-function idChange() {
-  if(id!==""){
-    console.log(id)
-  }
-}
-idChange();
-
   return (
+    <ResultProvider>
     <Router>
     <div>
         <Switch>
-          <Route exact path="/" component={() => <Home setResult={setResult}  />} />
-          <Route exact path="/home" component={() => <ShowMapped setResult={setResult}  />} />
-          <Route path="/hello" component={() => <Hone id={id} setResult={setResult} />} />
+          <Route exact path="/">
+            <ResultProvider>
+              <Home />
+            </ResultProvider>
+          </Route>
+          <Route exact path="/home" >
+            <ResultProvider>
+              <ShowMapped setId={setId} />
+            </ResultProvider>
+          </Route>
+          <Route path="/hello" >
+            <ResultProvider>
+              <GetVolume id={id} />
+            </ResultProvider>
+          </Route>
         </Switch>
 
         
         </div>
         </Router>   
+        </ResultProvider>
   );
 }
 

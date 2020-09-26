@@ -1,0 +1,61 @@
+.header{
+    font-size:500%;
+    font-weight:700;
+    margin:8rem auto 1rem;
+    font-family: 'Permanent Marker', cursive;
+    color:black;
+  }
+  
+  .btn1 { 
+    display:inline-block;
+    background-color: #ee4540;
+  }
+  
+  .custom-group{
+    margin:auto;
+    width:50%
+  }
+  
+  .custom-control{
+    width:80%;
+    display:inline-block
+  }
+  
+  .custom-form{
+   margin:auto;
+  }
+  
+a{
+    text-decoration:none;
+    color:inherit;
+  }
+  a:hover{
+    text-decoration:none;
+    color:inherit;
+  }  
+
+@media screen and (max-width: 500px) {
+    .header {
+      font-size:350%
+    }
+    .custom-group{
+      width:100%;
+    }
+    .custom-control{
+      width:65%
+    }
+    .custom-form{
+      margin:0;
+    }
+    
+  }
+  
+@media screen and (max-width: 1115px) and (min-width:500px){
+    .custom-group1{
+      width:100%;
+    }
+    .custom-control{
+      width:55%
+    } 
+  }
+  

@@ -1,8 +1,13 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import Axios from "axios"
 import {useHistory, Link} from "react-router-dom";
+import ResultContext from "../ResultContext";
+import "./navbar.css"
 
-function Home(props){
+/*Questo componente di fatto ha le medesima funzionalità di "Home", la maggiore differenza è la trasformazione 
+dell'header in un link attraverso "react-router-dom" */
+function NavBar(props){
+  const {setResult} =useContext(ResultContext)
     let history = useHistory();
     const [book,setBook]=useState("");
    function handleSubmit(event){
@@ -10,7 +15,7 @@ function Home(props){
       Axios.get("https://www.googleapis.com/books/v1/volumes?q="+ book +"&maxResults=40")
       .then(data =>{
         console.log(data.data.items[0])
-        props.setResult(data.data.items);
+        setResult(data.data.items);
         history.push("/home");
       }).catch(error =>{
         console.log(error);
@@ -30,17 +35,16 @@ function Home(props){
           <div className="navbar">
               <Link to="/"> <h1 className="header2" >AllBOOKS</h1> </Link>
         <form onSubmit={handleSubmit} className="container row form2">
-          <div className="form-group  col-md-9">
+          <div className="form-group  col-md-9 nav-group">
             <input 
                 type="text"
                 onChange={handleChange}
-                className="form-control"
-                placeholder="search for books" />
-            <button type="submit" className="btn btn-danger">Search</button> 
+                className="form-control nav-control" />
+            <button type="submit" className="btn btn-danger btn-navbar">Search</button> 
           </div>
         </form>
           </div>
       )
   }
   
-  export default Home;
+  export default NavBar;
