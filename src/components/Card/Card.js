@@ -22,7 +22,7 @@ function Card(props){
 //attraverso questa funzione rendo il pulsante un link che porterà a mostrare CardShow
     function handleClick(id) {
         props.setId(id) 
-        history.push("/hello");  
+        history.push("/getvolume");  
      }
 
 

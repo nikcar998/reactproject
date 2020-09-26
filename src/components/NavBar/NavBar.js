@@ -17,7 +17,7 @@ function NavBar(props){
       .then(data =>{
         console.log(_.get(data,'data.items[0]',"non trovato"));
         setResult(_.get(data,'data.items',[0]));
-        history.push("/home");
+        history.push("/map");
       }).catch(error =>{
         console.log(error);
       })

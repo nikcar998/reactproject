@@ -20,12 +20,12 @@ const [id, setId]=useState("");
               <Home />
             </ResultProvider>
           </Route>
-          <Route exact path="/home" >
+          <Route exact path="/map" >
             <ResultProvider>
               <ShowMapped setId={setId} />
             </ResultProvider>
           </Route>
-          <Route path="/hello" >
+          <Route path="/getvolume" >
             <ResultProvider>
               <GetVolume id={id} />
             </ResultProvider>
