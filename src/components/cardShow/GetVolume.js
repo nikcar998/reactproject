@@ -36,7 +36,12 @@ function GetVolume(props){
             return info;
         }).then(info => {
             setImage(_.get(info, 'volumeInfo.imageLinks.thumbnail', ""));
-            setAuthors(_.get(info, 'volumeInfo.authors', ""));
+            const auts=_.get(info, 'volumeInfo.authors', "");
+            if (auts!== ""){
+              setAuthors(auts.join(', '));
+            }else{
+              setAuthors(auts)
+            }
             setTitle(_.get(info, 'volumeInfo.title', ""));
             setPublisher(_.get(info, 'volumeInfo.publisher', ""));      
             const bookDate=_.get(info, 'volumeInfo.publishedDate', "");

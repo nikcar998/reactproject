@@ -11,6 +11,10 @@ function Card(props){
     let titleCut="";
     let descriptionCut="";
     const descriptionComplete=_.get(props,'description',"");
+    let auts=_.get(props, 'authors', "");
+            if (auts!== ""){
+              auts=auts.join(', ');
+            }
     if(descriptionComplete!==""){
         descriptionCut="Description: " + descriptionComplete.substring(0,100) + "...";
     }else{
@@ -18,6 +22,7 @@ function Card(props){
     }
     const title=props.title;
     titleCut=title.substring(0,50);
+
 
 //attraverso questa funzione rendo il pulsante un link che porterà a mostrare CardShow
     function handleClick(id) {
@@ -32,7 +37,7 @@ function Card(props){
         <div className="descriptions">
             <h2>{titleCut}</h2>
             <p>
-                Authors:{props.authors}
+                Authors:{auts}
             </p>
             <p>
               {descriptionCut}
