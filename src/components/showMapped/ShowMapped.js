@@ -6,6 +6,7 @@ import Home from "../home/Home"
 import _ from "lodash"
 import "./showmapped.css";
 
+
 //qui attraverso i valori ricevuti da resultcontext mostrerò un componente "Card" per ogni elemento
 //o, in caso di errore, una scritta per dichiarare allo user un errore 
 function Mapped(props){

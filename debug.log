@@ -232,3 +232,10 @@
 [0926/210216.587:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0929/222928.506:ERROR:crash_report_database_win.cc(469)] failed to stat report
 [0929/222928.507:ERROR:crash_report_database_win.cc(469)] failed to stat report
+[1016/202545.952:ERROR:crash_report_database_win.cc(498)] failed to stat report
+[1016/202545.953:ERROR:crash_report_database_win.cc(498)] failed to stat report
+[1016/203545.953:ERROR:crash_report_database_win.cc(498)] failed to stat report
+[1016/203545.953:ERROR:crash_report_database_win.cc(498)] failed to stat report
+[1016/203545.953:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\nikca\AppData\Local\Google\Chrome\User Data\Crashpad\reports\38486cfd-d759-4035-8a63-bff0eded3a5e.dmp: Impossibile trovare il file specificato. (0x2)
+[1016/203545.954:ERROR:filesystem_win.cc(116)] GetFileAttributes C:\Users\nikca\AppData\Local\Google\Chrome\User Data\Crashpad\reports\0a203d49-4e68-4dc2-bc17-3245ec331133.dmp: Impossibile trovare il file specificato. (0x2)
+[1016/203545.954:ERROR:directory_reader_win.cc(43)] FindFirstFile: Impossibile trovare il percorso specificato. (0x3)

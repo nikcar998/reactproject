@@ -5,7 +5,7 @@
     justify-content: space-evenly;
     width:80%;
     min-height: 40%;
-    margin:7% auto;
+    margin:6% auto;
     background-color: #393e46;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 
     0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -38,6 +38,21 @@
   .volumeTitle{
     color: #ee4540;
     margin-top:3%;
+  }
+
+  .xImageBtn{
+    position:absolute;
+    top:12%;
+    right:4%;
+    background-color:none;
+    border:none;
+    border-radius:50px;
+    box-shadow: none;
+    width:2.5%;
+    padding:0;
+  }
+  .xImage{
+    width:100%;
   }
 
   @media screen and (max-width: 700px){
